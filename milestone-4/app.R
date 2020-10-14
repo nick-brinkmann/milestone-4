@@ -11,7 +11,7 @@ library(shiny)
 library(tidyverse)
 library(dplyr)
 library(lubridate)
-all_games <- readRDS("../all_games_2.RDS")
+all_games <- readRDS("all_games_2.RDS")
 
 ui <- navbarPage(
     "Analyzing My Online Chess Games",
@@ -46,7 +46,8 @@ ui <- navbarPage(
                chess) sometime in the next few years."),
              h3("About Me"),
              p("My name is Nick Brinkmann and I study Applied Mathematics. 
-             You can reach me at nickbrinkmann@college.harvard.edu.")))
+             You can reach me at nickbrinkmann@college.harvard.edu."),
+             p("My Github repo  for this Milestone can be found at: https://github.com/nick-brinkmann/milestone-4.")))
 
 
 # Define server logic required to draw a histogram
