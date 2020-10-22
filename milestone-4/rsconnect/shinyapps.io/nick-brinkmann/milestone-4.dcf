@@ -5,8 +5,9 @@ account: nick-brinkmann
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 3017947
-bundleId: 3742293
+bundleId: 3768471
 url: https://nick-brinkmann.shinyapps.io/milestone-4/
-when: 1602718252.5889
+when: 1603324886.38746
 asMultiple: FALSE
 asStatic: FALSE
+ignoredFiles: all_games_2.RDS

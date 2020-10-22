@@ -11,13 +11,13 @@ library(shiny)
 library(tidyverse)
 library(dplyr)
 library(lubridate)
-all_games <- readRDS("all_games_2.RDS")
+all_games <- readRDS("all_games_oct21.RDS")
 
 ui <- navbarPage(
     "Analyzing My Online Chess Games",
     tabPanel("Plot",
              fluidPage(
-                 titlePanel("Elo Rating Over Time (By Website)"),
+                 titlePanel("Plots"),
                  sidebarLayout(
                      sidebarPanel(
                          sliderInput("date",
@@ -59,8 +59,13 @@ server <- function(input, output) {
             filter(Date > ymd(input$date)) %>%
         ggplot(aes(x = Date, y = my_elo)) +
             geom_smooth() +
-            facet_wrap(~website) +
-            labs(y = "Elo Rating")
+            facet_wrap(~ website + format) +
+            labs(title = "Elo Rating Over Time, by Website and Time Control", 
+                 y = "Elo Rating",
+                 caption = "Source: Self-collected data") +
+            ylim(1200,2100) +
+            theme_bw()
+            
     })
 }
 
